@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-sm-12 col-md-6">
+      <h1><strong>Auth</strong></h1>
+      <p>Bem vindo a nossa aplicação.</p>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <a class="btn btn-outline-primary cursor-normal login-page-nav-button" [ngClass]="page === 'login' ? 'active' : ''" (click)="page = 'login'"><strong>Entrar</strong></a>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <a class="btn btn-outline-primary cursor-normal login-page-nav-button" [ngClass]="page === 'register' ? 'active' : ''" (click)="page = 'register'"><strong>Registrar-se</strong></a>
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col">
+                    <app-login *ngIf="page === 'login'"></app-login>
+                    <app-register *ngIf="page === 'register'" (registered)="userRegistered()"></app-register>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
