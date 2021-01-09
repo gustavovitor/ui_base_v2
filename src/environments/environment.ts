@@ -4,11 +4,11 @@ export const environment = {
   production: false,
 
   TokenWhitelistedDomains: [/localhost:8080/],
-  TokenBlacklistedRoutes: [/\/oauth\/token/],
+  TokenBlacklistedRoutes: [/\/api\/oauth\/token/, /\/api\/public/],
 
   WebServiceList: {
     URLAuth: PrimaryWebService + 'oauth/token',
-    URLUser: PrimaryWebService + 'user',
+    URLPublicAuthUserResource: PrimaryWebService + 'public/user',
     URLLogout: PrimaryWebService + 'token/revoke'
   }
 };

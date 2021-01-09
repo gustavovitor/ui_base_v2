@@ -14,7 +14,7 @@ export class AuthService {
   }
 
   URL = environment.WebServiceList.URLAuth;
-  URLUser = environment.WebServiceList.URLUser;
+  URLUser = environment.WebServiceList.URLPublicAuthUserResource;
   jwtPayLoad: any;
 
   /* loadToken é responsável por carregar o token do localstorage caso já haja um, e injeta-o no serviço. */

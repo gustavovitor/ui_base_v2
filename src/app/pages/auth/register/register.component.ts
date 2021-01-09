@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit {
     this.submited = true;
     this.auth.register(this.userForm.value)
       .then(response => {
-        this.toast.success('Registrado com sucesso');
+        this.toast.success('Registrado com sucesso.');
+        this.toast.info('Nós enviamos um e-mail de confirmação.');
         this.registered.emit({ user: response });
         this.submited = false;
       })
