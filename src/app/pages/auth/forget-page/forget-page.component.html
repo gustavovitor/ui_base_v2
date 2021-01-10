@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="container-fluid login-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card login-card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h1 class="integracoes"><strong>Esqueceu sua senha?</strong></h1>
+                                        <p>Informe o e-mail da sua conta para que possamos recuperar ela para você.</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <form [formGroup]="userForm" (validSubmit)="forgetPassword()">
+                                            <div class="form-group">
+                                                <label for="email">E-mail</label>
+                                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary login-button" [disabled]="submited"><strong>Esqueci</strong></button>
+                                            <a [routerLink]="['/auth']" class="mt-2 forget-password" style="float: right">Voltar</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col d-flex justify-content-center">
+                        <div class="need-help-box">Precisa de ajuda? <a target="_blank" rel="noopener nofollow" href="https://wa.me/5518996601119">Entre em contato!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

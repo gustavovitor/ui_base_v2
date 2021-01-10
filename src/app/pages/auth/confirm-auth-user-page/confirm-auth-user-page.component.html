@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="container-fluid login-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card login-card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12" *ngIf="submited && !success">
+                                        <h1 class="integracoes"><strong>Aguarde!</strong></h1>
+                                        <p>Um momento, estamos confirmando os seus dados.</p>
+                                    </div>
+                                    <div class="col-12" *ngIf="!submited && !success">
+                                        <h1 class="integracoes"><strong>:(</strong></h1>
+                                        <p>Aconteceu alguma coisa com seus dados, por favor, confirme tudo e volte aqui!</p>
+                                    </div>
+                                    <div class="col-12" *ngIf="!submited && success">
+                                        <h1 class="integracoes"><strong>:D</strong></h1>
+                                        <p>Você está pronto para utilizar o sistema.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col d-flex justify-content-center">
+                        <div class="need-help-box">Precisa de ajuda? <a target="_blank" rel="noopener nofollow" href="https://wa.me/5518996601119">Entre em contato!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

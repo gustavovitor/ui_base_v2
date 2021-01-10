@@ -33,9 +33,11 @@ export class AuthService {
   }
 
   register(user: AuthUserForm): Promise<void> {
-    let headers = new HttpHeaders();
-    headers = headers.append('Authorization', 'Basic b2F1dGgyLWNsaWVudC1hcGk6KlkqJWJYUSM8NSxwfltWazliYiYmWDlyc3c3Vn5KYF8=');
-    return this.http.post<any>(`${this.URLUser}/register`, user, { headers, withCredentials: true }).toPromise();
+    return this.http.post<any>(`${this.URLUser}/register`, user).toPromise();
+  }
+
+  confirmEmail(value: any): Promise<void> {
+    return this.http.patch<void>(`${this.URLUser}/confirm/${value.email}/${value.hash}`, null).toPromise();
   }
 
   /** login responsável pelo login e armazenamento do token.
@@ -92,5 +94,13 @@ export class AuthService {
   cleanAccessToken() {
     localStorage.removeItem('access_token');
     this.jwtPayLoad = null;
+  }
+
+  forgetPassword(value: any): Promise<void> {
+    return this.http.patch<void>(`${this.URLUser}/password/forget/${value.email}`, null).toPromise();
+  }
+
+  changePassword(value: any): Promise<void> {
+    return this.http.patch<void>(`${this.URLUser}/password/change/${value.email}/${value.hash}`, value.pass).toPromise();
   }
 }

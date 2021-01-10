@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="container-fluid login-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card login-card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h1 class="integracoes"><strong>Cadastro</strong></h1>
+                                        <p>É muito fácil criar uma conta conosco.</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <form [formGroup]="registerForm" (validSubmit)="login()" autocomplete="off">
+                                            <div class="form-group">
+                                                <label for="fullName">Nome Completo</label>
+                                                <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Nome Completo" formControlName="fullName" autocomplete="ui_base_full_name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">E-mail</label>
+                                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email" autocomplete="ui_base_full_email">
+                                            </div>
+                                            <div class="form-group password-input">
+                                                <label for="pass">Senha</label>
+                                                <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pass" formControlName="pass" autocomplete="ui_base_full_pass">
+                                                <button type="button" class="btn btn-outline-secondary password-eye-button" (click)="showPassword = !showPassword">
+                                                    <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
+                                                </button>
+                                                <small id="passHelp" class="form-text text-muted">Não passe a sua senha para ninguém.</small>
+                                            </div>
+
+                                            <div class="form-group password-input">
+                                                <label for="confirmPassword">Confirme a Senha</label><br/>
+                                                <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="confirmPassword" formControlName="confirmPassword" autocomplete="ui_base_full_confirm_password">
+                                                <button type="button" class="btn btn-outline-secondary password-eye-button" (click)="showPassword = !showPassword">
+                                                    <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
+                                                </button>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary login-button" [disabled]="submited"><strong>Cadastrar</strong></button>
+                                            <a [routerLink]="['/auth']" class="mt-2 forget-password" style="float: right">Voltar</a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col d-flex justify-content-center">
+                        <div class="need-help-box">Precisa de ajuda? <a target="_blank" rel="noopener nofollow" href="https://wa.me/5518996601119">Entre em contato!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

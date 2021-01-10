@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { AuthService } from '../../../services/security/auth.service';
 import { ToastService } from '../../../services/util/toast.service';
 import { ErrorHandlerService } from '../../../services/util/error-handler.service';
@@ -8,15 +7,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  selector: 'app-forget-page',
+  templateUrl: './forget-page.component.html',
+  styleUrls: ['./forget-page.component.scss']
 })
-export class LoginPageComponent implements OnInit {
+export class ForgetPageComponent implements OnInit {
   submited = false;
-  faEye = faEye;
-  faEyeSlash = faEyeSlash;
-  showPassword = false;
 
   constructor(private auth: AuthService,
               private toast: ToastService,
@@ -27,20 +23,17 @@ export class LoginPageComponent implements OnInit {
   userForm = this.formBuilder.group({
     email: [null, Validators.compose([
       Validators.required
-    ])],
-    pass: [null, Validators.compose([
-      Validators.required
     ])]
   });
 
   ngOnInit() { }
 
-  login() {
+  forgetPassword() {
     this.submited = true;
-    this.auth.login(this.userForm.value)
+    this.auth.forgetPassword(this.userForm.value)
       .then(() => {
-        this.toast.success('Logado com sucesso');
-        this.router.navigate(['/pages']);
+        this.toast.info('Enviamos um e-mail de confirmação.');
+        this.router.navigate(['/auth']);
         this.submited = false;
       })
       .catch(err => {
