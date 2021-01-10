@@ -4,14 +4,15 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../../shared/shared.module';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterComponent } from './register/register.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     SharedModule,
 
-    AuthRoutingModule
+    AuthRoutingModule,
+    FontAwesomeModule
   ],
-  declarations: [LoginComponent, LoginPageComponent, RegisterComponent]
+  declarations: [LoginComponent, LoginPageComponent]
 })
 export class AuthModule { }

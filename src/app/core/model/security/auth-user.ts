@@ -1,7 +1,6 @@
 export class AuthUserForm {
-  user: string;
   email: string;
-  senha: string;
+  pass: string;
 }
 
 export class User extends AuthUserForm {}

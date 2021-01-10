@@ -45,7 +45,7 @@ export class AuthService {
     headers = headers.append('Authorization', 'Basic b2F1dGgyLWNsaWVudC1hcGk6KlkqJWJYUSM8NSxwfltWazliYiYmWDlyc3c3Vn5KYF8=');
     headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    const body = `username=${user.email}&password=${user.senha}&grant_type=password`;
+    const body = `username=${user.email}&password=${user.pass}&grant_type=password`;
     return this.http.post<any>(this.URL, body, { headers, withCredentials: true }).toPromise()
       .then(res => {
         this.saveToken(res.access_token);

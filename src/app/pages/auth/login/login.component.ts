@@ -4,6 +4,7 @@ import { ToastService } from '../../../services/util/toast.service';
 import { ErrorHandlerService } from '../../../services/util/error-handler.service';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   submited = false;
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
+  showPassword = false;
 
   constructor(private auth: AuthService,
               private toast: ToastService,
@@ -23,7 +27,7 @@ export class LoginComponent implements OnInit {
     email: [null, Validators.compose([
       Validators.required
     ])],
-    senha: [null, Validators.compose([
+    pass: [null, Validators.compose([
       Validators.required
     ])]
   });
