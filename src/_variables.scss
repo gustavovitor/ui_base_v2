@@ -58,7 +58,9 @@ $colors: map-merge(
 );
 
 $primary:       #26B1FF !default;
-$secondary:     $gray-600 !default;
+$navlink-active: #1d75a7 !default;
+$secondary:     $gray-800 !default;
+$project-black:     #3D3D3D !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;

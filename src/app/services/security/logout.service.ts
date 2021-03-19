@@ -17,7 +17,7 @@ export class LogoutService {
     return this.http.delete(this.URL, { withCredentials: true }).toPromise()
       .then(() => {
         this.auth.cleanAccessToken();
-        this.router.navigate(['auth']);
+        this.router.navigate(['/auth']);
       })
       .catch(() => null);
   }

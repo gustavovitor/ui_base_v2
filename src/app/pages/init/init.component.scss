@@ -1,0 +1,33 @@
+@import "src/variables";
+
+.nutre-nav {
+  color: $light;
+
+  padding: 0 16px;
+
+  height: 64px;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+  background-color: $primary;
+}
+
+.nav-link.active {
+  background-color: $navlink-active;
+  border-radius: 5px;
+}
+
+.nav-item a {
+  color: $light;
+}
+
+.dropdown-item {
+  color: $project-black !important;
+}
+
+.dropdown-item:hover {
+  background-color: $gray-200;
+}

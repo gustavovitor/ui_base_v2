@@ -8,7 +8,7 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-12">
-                    <h1 class="integracoes"><strong>Integrações</strong></h1>
+                    <h1 class="integracoes"><strong>Nutre</strong></h1>
                   </div>
                 </div>
                 <div class="row mt-2">
@@ -19,16 +19,14 @@
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email">
                       </div>
                       <div class="form-group password-input">
-                        <label for="pass">Senha</label>
-                        <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pass" formControlName="pass">
+                        <label for="senha">Senha</label>
+                        <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="senha" formControlName="senha">
                         <button type="button" class="btn btn-outline-secondary password-eye-button" (click)="showPassword = !showPassword">
                           <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
                         </button>
                         <small id="passHelp" class="form-text text-muted">Não passe a sua senha para ninguém.</small>
                       </div>
                       <button type="submit" class="btn btn-outline-primary login-button" [disabled]="submited"><strong>Entrar</strong></button>
-                      <button type="button" [routerLink]="['/auth/register']" class="mt-2 btn btn-primary login-button" [disabled]="submited"><strong>Criar Conta</strong></button>
-                      <a [routerLink]="['/auth/password/forget']" class="mt-2 forget-password" style="float: right">Esqueceu sua senha?</a>
                     </form>
                   </div>
                 </div>
@@ -38,7 +36,7 @@
         </div>
         <div class="row mt-2">
           <div class="col d-flex justify-content-center">
-            <div class="need-help-box">Precisa de ajuda? <a target="_blank" rel="noopener nofollow" href="https://wa.me/5518996601119">Entre em contato!</a></div>
+            <div class="need-help-box">Precisa de ajuda? <a target="_blank" rel="noopener nofollow" href="https://wa.me/5546999042192">Entre em contato!</a></div>
           </div>
         </div>
       </div>

@@ -1,2 +1,55 @@
-Init module works.
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" style="padding: 0">
+            <nav class="nutre-nav d-flex justify-content-between align-items-center">
+                <div class="d-flex">
+                    <h3><strong>Nutre</strong></h3>
+                    <div class="ml-3">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/" routerLinkActive="active">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">Cadastros</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Produtos</a>
+                                    <a class="dropdown-item" routerLink="/pages/init/vendedores">Vendedores</a>
+                                    <a class="dropdown-item" href="#">Clientes</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">Operações</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Entrada de Mercadorias</a>
+                                    <a class="dropdown-item" href="#">Saída de Mercadorias</a>
+                                    <a class="dropdown-item" href="#">Lançamento de Comissão</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Comissão Sob Faturamento</a>
+                                    <a class="dropdown-item" href="#">Resumo das Vendas</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" (click)="logout()" class="btn btn-secondary">Sair</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

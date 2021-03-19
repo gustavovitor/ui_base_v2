@@ -5,7 +5,13 @@ import { InitComponent } from './init.component';
 const routes: Routes = [
   {
     path: '',
-    component: InitComponent
+    component: InitComponent,
+    children: [
+      {
+        path: 'vendedores',
+        loadChildren: () => import('./vendedores/vendedores.module').then(m => m.VendedoresModule)
+      }
+    ]
   }
 ];
 

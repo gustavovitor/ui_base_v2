@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { AuthService } from '../../../services/security/auth.service';
 import { ToastService } from '../../../services/util/toast.service';
 import { ErrorHandlerService } from '../../../services/util/error-handler.service';
@@ -28,7 +27,7 @@ export class LoginPageComponent implements OnInit {
     email: [null, Validators.compose([
       Validators.required
     ])],
-    pass: [null, Validators.compose([
+    senha: [null, Validators.compose([
       Validators.required
     ])]
   });

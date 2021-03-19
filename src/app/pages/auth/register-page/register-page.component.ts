@@ -26,17 +26,17 @@ export class RegisterPageComponent implements OnInit {
               private formBuilder: FormBuilder) { }
 
   registerForm = this.formBuilder.group({
-    fullName: [null, Validators.compose([
+    nomeCompleto: [null, Validators.compose([
       Validators.required, Validators.maxLength(64)
     ])],
     email: [null, Validators.compose([
       Validators.required, Validators.email
     ])],
-    pass: [null, Validators.compose([
+    senha: [null, Validators.compose([
       Validators.required
     ])],
-    confirmPassword: [null, Validators.compose([
-      Validators.required, FormUtils.needToBeEqual('pass', 'As senhas não coincidem.')
+    confirmeSenha: [null, Validators.compose([
+      Validators.required, FormUtils.needToBeEqual('senha', 'As senhas não coincidem.')
     ])]
   });
 

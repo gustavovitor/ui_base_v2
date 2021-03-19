@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { AuthUserForm } from '../../core/model/security/auth-user';
-import { promise } from 'selenium-webdriver';
+import { AppUser } from '../../core/model/security/app_user';
 
 @Injectable()
 export class AuthService {
@@ -32,7 +31,7 @@ export class AuthService {
     localStorage.setItem('access_token', token);
   }
 
-  register(user: AuthUserForm): Promise<void> {
+  register(user: AppUser): Promise<void> {
     return this.http.post<any>(`${this.URLUser}/register`, user).toPromise();
   }
 
@@ -41,13 +40,13 @@ export class AuthService {
   }
 
   /** login responsável pelo login e armazenamento do token.
-   * @param user interface utilizada para facilitar o login do tipo {@link AuthUserForm} */
-  login(user: AuthUserForm): Promise<void> {
+   * @param user interface utilizada para facilitar o login do tipo {@link AppUser} */
+  login(user: AppUser): Promise<void> {
     let headers = new HttpHeaders();
     headers = headers.append('Authorization', 'Basic b2F1dGgyLWNsaWVudC1hcGk6KlkqJWJYUSM8NSxwfltWazliYiYmWDlyc3c3Vn5KYF8=');
     headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    const body = `username=${user.email}&password=${user.pass}&grant_type=password`;
+    const body = `username=${user.email}&password=${user.senha}&grant_type=password`;
     return this.http.post<any>(this.URL, body, { headers, withCredentials: true }).toPromise()
       .then(res => {
         this.saveToken(res.access_token);
