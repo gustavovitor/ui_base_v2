@@ -17,7 +17,6 @@ export class ChangePasswordPageComponent implements OnInit {
   faEye = faEye;
   faEyeSlash = faEyeSlash;
   showPassword = false;
-  showConfirmPassword = false;
 
   constructor(private auth: AuthService,
               private toast: ToastService,

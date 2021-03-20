@@ -16,16 +16,16 @@
                                     <div class="col">
                                         <form [formGroup]="registerForm" (validSubmit)="login()" autocomplete="off">
                                             <div class="form-group">
-                                                <label for="nomeCompleto">Nome Completo</label>
-                                                <input type="text" class="form-control" id="nomeCompleto" aria-describedby="fullNameHelp" placeholder="Nome Completo" formControlName="nomeCompleto" autocomplete="ui_base_full_name">
+                                                <label for="fullName">Nome Completo</label>
+                                                <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Nome Completo" formControlName="fullName" autocomplete="ui_base_full_name">
                                             </div>
                                             <div class="form-group">
                                                 <label for="email">E-mail</label>
                                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-mail" formControlName="email" autocomplete="ui_base_full_email">
                                             </div>
                                             <div class="form-group password-input">
-                                                <label for="senha">Senha</label>
-                                                <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="senha" formControlName="senha" autocomplete="ui_base_full_pass">
+                                                <label for="pass">Senha</label>
+                                                <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pass" formControlName="pass" autocomplete="ui_base_full_pass">
                                                 <button type="button" class="btn btn-outline-secondary password-eye-button" (click)="showPassword = !showPassword">
                                                     <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
                                                 </button>
@@ -33,10 +33,10 @@
                                             </div>
 
                                             <div class="form-group password-input">
-                                                <label for="confirmeSenha">Confirme a Senha</label><br/>
-                                                <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" id="confirmeSenha" formControlName="confirmeSenha" autocomplete="ui_base_full_confirm_password">
-                                                <button type="button" class="btn btn-outline-secondary password-eye-button" (click)="showConfirmPassword = !showConfirmPassword">
-                                                    <fa-icon [icon]="showConfirmPassword ? faEye : faEyeSlash"></fa-icon>
+                                                <label for="confirmPassword">Confirme a Senha</label><br/>
+                                                <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="confirmPassword" formControlName="confirmPassword" autocomplete="ui_base_full_confirm_password">
+                                                <button type="button" class="btn btn-outline-secondary password-eye-button" (click)="showPassword = !showPassword">
+                                                    <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
                                                 </button>
                                             </div>
                                             <button type="submit" class="btn btn-primary login-button" [disabled]="submited"><strong>Cadastrar</strong></button>
