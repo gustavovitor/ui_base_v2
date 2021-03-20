@@ -7,6 +7,9 @@ import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { environment } from '../environments/environment';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingService } from './services/util/loading.service';
+import { MaskPipe, NgxMaskModule } from 'ngx-mask';
 
 export function jwtOptionsFactory() {
   return {
@@ -34,10 +37,15 @@ export function jwtOptionsFactory() {
 
     NgbModule,
     ToastrModule.forRoot(),
+    NgxMaskModule.forRoot(),
 
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSpinnerModule
   ],
-  providers: [],
+  providers: [
+    LoadingService,
+    MaskPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

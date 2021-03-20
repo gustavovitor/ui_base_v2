@@ -102,4 +102,17 @@ export class AuthService {
   changePassword(value: any): Promise<void> {
     return this.http.patch<void>(`${this.URLUser}/password/change/${value.email}/${value.hash}`, value.pass).toPromise();
   }
+
+  async getValidAccessToken() {
+    if (this.isAccessTokenInvalid) {
+      await this.getNewAccessToken();
+      if (!this.isAccessTokenInvalid) {
+        return localStorage.getItem('access_token');
+      } else {
+        console.log('Access token inválido');
+      }
+    }
+    return localStorage.getItem('access_token');
+  }
+
 }

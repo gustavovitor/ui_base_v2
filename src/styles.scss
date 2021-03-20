@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 @import "variables";
-
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: whitesmoke;
 }
 
 .cursor-normal {
@@ -31,9 +30,68 @@ body {
 }
 
 .form-control {
-  background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   border-radius: 10px;
-  padding: 24px;
+  height: 48px;
+  color: black;
+}
+
+.password-input {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.password-input label {
+  width: 100%;
+}
+
+.password-input button {
+  display: inline;
+}
+
+.password-input input {
+  width: 80%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.password-eye-button {
+  width: 20%;
+  height: 48px;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.nutre-page {
+  padding: 16px;
+}
+
+.btn-pesquisa {
+  margin-top: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-pesquisa {
+    margin-top: 0;
+  }
+
+  .btn-pesquisa button {
+    width: 100%;
+  }
+}
+
+.nutre-produto-inativo {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: indianred;
+}
+
+.nutre-produto-ativo {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: lightgreen;
 }

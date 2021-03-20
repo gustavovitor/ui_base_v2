@@ -1,1 +1,67 @@
-<p>produtos-lista-page works!</p>
+<div class="container-fluid nutre-page">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <span>Filtros</span>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="filter()">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="id">Cód.</label>
+                                        <input type="text" id="id" [(ngModel)]="produtoFilter.id" [ngModelOptions]="{ standalone: true }"
+                                               placeholder="Código do Produto" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="nomeProduto">Nome</label>
+                                        <input type="text" id="nomeProduto" [(ngModel)]="produtoFilter.nomeProduto" [ngModelOptions]="{ standalone: true }"
+                                               placeholder="Nome do Produto" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="medida">Status do Produto</label>
+                                        <select class="form-control" id="medida" [(ngModel)]="produtoFilter.produtoInativoFilterEnum" [ngModelOptions]="{ standalone: true }">
+                                            <option value="ATIVO">Ativo</option>
+                                            <option value="INATIVO">Inativo</option>
+                                            <option value="AMBOS">Ambos</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 btn-pesquisa">
+                                    <button class="btn btn-primary">Pesquisar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <span>Produtos</span>
+                    <button type="button" routerLink="/pages/init/produtos/inserir" class="btn btn-primary">+</button>
+                </div>
+                <div class="card-body">
+                    <app-data-table
+                            #viewDataTable
+                            [columns]="TABLE_COLUMNS"
+                            [actions]="TABLE_ACTIONS"
+                            [searching]="false"
+                            [pageable]="true"
+                            [search]="produtoFilter"
+                            [url]="TABLE_URL">
+                    </app-data-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

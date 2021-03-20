@@ -1,1 +1,65 @@
-<p>produtos-formulario-page works!</p>
+<div class="container-fluid nutre-page">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="produtoForm" (validSubmit)="save()">
+                <div class="card">
+                    <div class="card-header">
+                        <span>{{ produtoForm.get('id').value ? 'Editando o Produto' : 'Inserir Produto' }}</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="nomeProduto">Nome do Produto</label>
+                                        <input type="text" formControlName="nomeProduto" class="form-control"
+                                               id="nomeProduto" placeholder="Nome do Produto"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="valorCusto">Valor Custo</label>
+                                        <input type="text" formControlName="valorCusto" class="form-control"
+                                               id="valorCusto" placeholder="Custo do Produto"
+                                               mask="separator.2" thousandSeparator="." decimalMarker=","/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="valorRevenda">Valor de Revenda</label>
+                                        <input type="text" formControlName="valorRevenda" class="form-control"
+                                               id="valorRevenda" placeholder="Valor de Revenda"
+                                               mask="separator.2" thousandSeparator="." decimalMarker=","/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="form-group">
+                                        <label for="medida">Unidade de Medida</label>
+                                        <select class="form-control" id="medida" formControlName="medida">
+                                            <option value="UNIDADE">Unidade</option>
+                                            <option value="PACOTE">Pacote</option>
+                                            <option value="CAIXA">Caixa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3 d-flex align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="produtoInativo"
+                                               id="produtoInativo">
+                                        <label class="form-check-label" for="produtoInativo">
+                                            Inativo
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Salvar</button>&nbsp;
+                        <button type="button" routerLink="/pages/init/produtos" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -31,35 +31,3 @@
 .login-button {
   width: 100%;
 }
-
-.password-input {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.password-input label {
-  width: 100%;
-}
-
-.password-input button {
-  display: inline;
-}
-
-.password-input input {
-  width: 80%;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.password-eye-button {
-  width: 20%;
-  height: 50px;
-  border-left: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.forget-password {
-  font-size: 12px;
-  text-decoration: none;
-}
